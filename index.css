@@ -1,0 +1,70 @@
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+
+}
+
+.fill
+{
+    width: 0;
+    animation-name: across;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.fill-column
+{
+    height: 0;
+    animation-name: across-column;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.column
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: stretch;
+}
+
+#name {
+    justify-content: right;
+    font-family: Calibri;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+@keyframes across {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%
+    }
+}
+
+@keyframes across-column {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests</title>
+</head>
+<body>
+    <div class="column">
+        <button id = "jane-score" >
+            LOG JANE'S SCORE!
+        </button>
+    </div>
+
+    <script>
+
+        // test1 JS array
+        let largeCountries = ["Tuvalu","India","USA","Indonesia","Monaco"]
+        largeCountries.push(largeCountries.shift())
+        largeCountries.push(largeCountries.shift())
+        let usa = largeCountries.shift();
+        largeCountries.unshift(largeCountries.pop());
+        largeCountries.unshift("China");
+        largeCountries.unshift(usa);
+
+
+        // test2 conditional statement
+        function logDiscount(age)
+        {
+            if (age < 6)
+            {
+                return "free";
+            }
+            else if (age >= 6 && age <= 17)
+            {
+                return "child discount";
+            }
+            else if (age >= 18 && age <= 26)
+            {
+                return "student discount";
+            }
+            else if (age >= 27 && age <= 66)
+            {
+                return "full price";
+            }
+            else if (age > 66)
+            {
+                return "senior citizen discount";
+            }
+        }
+
+        let age = 15;
+
+        console.log(logDiscount(age));
+
+        // test3 random function
+        let hands = ["rock", "paper", "scissor"]
+        function selectRandomItemFromArray(arr)
+        {
+            let rIndex = Math.floor(Math.random() * (arr.length));
+            return arr[rIndex];
+        }
+
+        console.log(selectRandomItemFromArray(hands))
+
+        // test 4 janes score
+        let data = [
+            {
+                player: "Jane",
+                score: 52
+            },
+            {
+                player: "Mark",
+                score: 41
+            }
+        ]
+        function logJanesScore()
+        {
+            let f = data.filter(i => i.player == "Jane");
+            let s = f && f.length > 0 ? f[0] : NaN;
+            console.log('%c Janes Score: ' + s.score + ' ', 'background: #222; color: #bada55; font-size: 40px; border-radius: 10px' );
+        }
+
+        document.getElementById("jane-score").addEventListener("click", logJanesScore);
+
+    </script>
+</body>
+</html>
